@@ -1,4 +1,5 @@
-import 'package:chat_app/build_chat_message.dart';
+// ignore_for_file: prefer_const_constructors
+
 import 'package:chat_app/chat_message.dart';
 import 'package:chat_app/user.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,6 @@ class BuildMessageInput extends StatefulWidget {
 
 class _BuildMessageInputState extends State<BuildMessageInput> {
   String dropdownValue = 'Current User';
-  DateTime now = DateTime.now();
   final TextEditingController textController = TextEditingController();
 
   @override
@@ -38,7 +38,7 @@ class _BuildMessageInputState extends State<BuildMessageInput> {
             },
             value: dropdownValue,
             alignment: Alignment.center,
-            items: [
+            items: const [
               DropdownMenuItem(
                 alignment: Alignment.center,
                 child: Text('Current User'),
@@ -75,12 +75,15 @@ class _BuildMessageInputState extends State<BuildMessageInput> {
 
   void submitMessage(String value) {
     textController.clear();
+    DateTime time = DateTime(DateTime.now().year, DateTime.now().month,
+        DateTime.now().day, DateTime.now().hour, DateTime.now().minute);
+    debugPrint(time.toString());
     Message msg = Message(
       sender: dropdownValue == 'Current User' ? currentUser : bob,
-      time: "${now.hour}:${now.minute}",
+      time:
+          "${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}",
       text: value,
     );
-    final bool isMe = msg.sender.id == currentUser.id;
     messages.insert(0, msg);
   }
 }

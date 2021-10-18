@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:chat_app/chat_message.dart';
 import 'package:chat_app/user.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ class BuildChatMessage extends StatefulWidget {
 }
 
 class _BuildChatMessageState extends State<BuildChatMessage> {
+  final defaultPadding = 20.0;
   @override
   Widget build(BuildContext context) {
     final Container msg = Container(

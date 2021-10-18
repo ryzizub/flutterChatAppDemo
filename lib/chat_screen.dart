@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:chat_app/build_chat_message.dart';
 import 'package:chat_app/build_message_input.dart';
 import 'package:chat_app/chat_message.dart';
