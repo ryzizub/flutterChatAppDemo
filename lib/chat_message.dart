@@ -2,7 +2,7 @@ import 'package:chat_app/user.dart';
 
 class Message {
   final User sender;
-  final String time;
+  final DateTime time;
   final String text;
 
   Message({

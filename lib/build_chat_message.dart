@@ -32,7 +32,7 @@ class _BuildChatMessageState extends State<BuildChatMessage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.message.time,
+            "${widget.message.time.hour.toString().padLeft(2, '0')}:${widget.message.time.minute.toString().padLeft(2, '0')}",
             style: TextStyle(
               color: Colors.white54,
               fontSize: 16.0,

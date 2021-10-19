@@ -77,11 +77,9 @@ class _BuildMessageInputState extends State<BuildMessageInput> {
     textController.clear();
     DateTime time = DateTime(DateTime.now().year, DateTime.now().month,
         DateTime.now().day, DateTime.now().hour, DateTime.now().minute);
-    debugPrint(time.toString());
     Message msg = Message(
       sender: dropdownValue == 'Current User' ? currentUser : bob,
-      time:
-          "${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}",
+      time: time,
       text: value,
     );
     messages.insert(0, msg);
